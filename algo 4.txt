@@ -1,0 +1,22 @@
+PROCEDURE tri(VAR tab :  ARRAY_OF INTEGER[14];)
+VAR
+    pos : INTEGER ;
+    val-ins : INTEGER ; 
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP step1  DO
+        val-ins =tab[i] ;
+        pos = i ;
+        WHILE (pos > 0 AND tab[pos-1] > val-ins) DO
+            tab[pos] = tab [pos-1] ;
+            pos = pos - 1 ;
+        END_WHILE
+        tab [pos] = val-ins ;
+    END_FOR
+END
+
+ALGORITHM tri-elements
+VAR
+    tab : ARRAY_OF INTEGER[14];
+BEGIN
+    tri [tab] ;
+END
